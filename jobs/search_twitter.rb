@@ -1,4 +1,4 @@
-$LOAD_PATH.unshift File.dirname(__FILE__)
+$LOAD_PATH.unshift File.join(File.dirname(__FILE__), "..")
 
 require "multi_json"
 require "net/http"
@@ -10,7 +10,10 @@ ID      = "id"
 
 #last_id_seen = 180894816106840064
 uri = URI('http://search.twitter.com/search.json')
-last_id_seen = 0
+# TODO(viet): Check if file exists
+f = File.new("#{DootyWater::Constant::DATA_DIR}/last_seen", "r")
+last_id_seen = f.gets
+f.close
 
 loop do
   params = { :q => "dootywater", :result_type => "recent", :since_id => last_id_seen }
@@ -25,6 +28,10 @@ loop do
         last_id_seen = [last_id_seen, tweet[ID]].max
         puts tweet[TEXT]
       end
+    end
+
+    File.open("#{DootyWater::Constant::DATA_DIR}/last_seen", "w") do |f|
+      f.write last_id_seen
     end
   end
 
