@@ -8,7 +8,6 @@ RESULTS = "results"
 TEXT    = "text"
 ID      = "id"
 
-#last_id_seen = 180894816106840064
 uri = URI('http://search.twitter.com/search.json')
 # TODO(viet): Check if file exists
 f = File.new("#{DootyWater::Constant::DATA_DIR}/last_seen", "r")
