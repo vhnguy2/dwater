@@ -12,7 +12,7 @@ ID      = "id"
 uri = URI('http://search.twitter.com/search.json')
 # TODO(viet): Check if file exists
 f = File.new("#{DootyWater::Constant::DATA_DIR}/last_seen", "r")
-last_id_seen = f.gets
+last_id_seen = f.gets.to_i
 f.close
 
 loop do

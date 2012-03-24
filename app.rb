@@ -21,6 +21,7 @@ module DootyWater
           data = `tail -n 25 #{DootyWater::Constant::DATA_DIR}/dooties.txt`
           dooties << data.split("\n")
           dooties.flatten!
+          dooties.reverse!
           last_check = curr_time
         end
         dooties
