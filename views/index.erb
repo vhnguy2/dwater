@@ -1,12 +1,16 @@
-<h3>Water</h3>
-
-<span><%= dooties.size %> total waters</span>
+<div id="submit_dooty">
+  <form name="dwater_post" action="dwater/add" method="post">
+    <input id="add_message_txtbox" type="text" name="message" />
+    <input class="submit_btn" type="submit" value="Submit">
+  </form>
+</div>
 
 <br/>
-<br/>
 
-<table class="main_tbl">
-  <% dooties.each do |d| %>
-    <tr><td><%= d %></td></tr>
-  <% end %>
-</table>
+<div id="dooties">
+  <table id="main_tbl">
+    <% dooties.each do |d| %>
+      <tr class="main_tbl_row"><td class="main_tbl_column"><%= d %></td></tr>
+    <% end %>
+  </table>
+</div>

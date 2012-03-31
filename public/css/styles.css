@@ -1,0 +1,16 @@
+
+#main_tbl {
+  width:70%;
+  border:1px solid;
+}
+
+tr.main_tbl_row {
+  
+}
+
+td.main_tbl_column {
+  padding:5px;
+}
+
+
+

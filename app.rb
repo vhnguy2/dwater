@@ -12,6 +12,11 @@ module DootyWater
       erb :index, :locals => { :dooties => dooties }
     end
 
+    post "/dwater/add" do
+      save_dooty params[:message]
+      redirect "/"
+    end
+
     helpers do
       def update_dooties(last_check, dooties)
         curr_time = Time.now.to_i
@@ -25,6 +30,12 @@ module DootyWater
           last_check = curr_time
         end
         dooties
+      end
+
+      def save_dooty(message)
+        File.open("#{DootyWater::Constant::DATA_DIR}/dooties.txt", "a") do |f|
+          f.write("#{message}\n")
+        end
       end
     end
   end
