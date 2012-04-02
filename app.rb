@@ -13,7 +13,7 @@ module DootyWater
     end
 
     post "/dwater/add" do
-      save_dooty params[:message]
+      save_dooty request.body.read.strip
       redirect "/"
     end
 

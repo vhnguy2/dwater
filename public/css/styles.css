@@ -1,16 +1,29 @@
+#submit {
+  width:70%;
+  border: 1px solid;
+}
 
 #main_tbl {
-  width:70%;
-  border:1px solid;
+  width:100%;
 }
 
 tr.main_tbl_row {
-  
 }
 
 td.main_tbl_column {
   padding:5px;
+  border:1px dotted;
 }
 
+#add_message_txtbox {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  font-size: 0.8em;
+  text-shadow: 1px 1px 1px gray;
+  width: 100%
+}
 
-
+#submit_btn {
+  float:right;
+}
